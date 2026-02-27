@@ -1,0 +1,404 @@
+@use "../mixable" as *;
+@use "../global" as *;
+
+/* footer start */
+/* 
+.footer_top {
+  clear: both;
+  @extend %relative;
+  width: 100%;
+
+  img {
+    width: 100%;
+
+    @media (max-width: 767.98px) {
+      height: 25vw;
+    }
+  }
+}
+
+footer {
+  clear: both;
+  color: #b3b3b3;
+  display: block;
+  font-weight: 300;
+  padding-top: 60px;
+  width: 100%;
+
+  .content_wrapper {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .col_divider {
+    [class^="col-"]:not(:last-child) {
+      border-right: 1px solid #635c70;
+      padding-bottom: 2.5rem;
+
+      @media screen and (min-width: 1921px) {
+        padding-bottom: 5.5rem;
+      }
+
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        border-right: 0 none;
+      }
+
+      @media (max-width: 767.98px) {
+        border-bottom: 1px solid #635c70;
+        border-right: 0 none;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+      }
+    }
+
+    [class^="col-"]:not(:first-child) {
+      padding-left: 2.5rem;
+
+      @media screen and (min-width: 1921px) {
+        padding-left: 5rem;
+      }
+
+      @media (max-width: 767.98px) {
+        padding-left: 0;
+      }
+    }
+
+    [class^="col-"]:first-child {
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        padding-left: 2.5rem;
+      }
+    }
+
+    [class^="col-"]:nth-child(odd) {
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        border-right: 1px solid #635c70;
+      }
+    }
+  }
+
+  ul {
+    font-size: 0;
+    @include list_clear;
+  }
+
+  a {
+    color: #b3b3b3;
+    display: inline-block;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .footer_logo {
+    display: inline-block;
+    @extend %relative;
+    width: 210px;
+
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 575.98px) {
+      margin-bottom: 30px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .footer_single {
+    @include font-size(14px);
+
+    h5 {
+      color: #fff;
+      @include font-size(18px);
+      font-weight: 300;
+      margin-bottom: 0;
+      @extend %relative;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    p {
+      margin-top: 40px;
+      opacity: 0.65;
+
+      @media (max-width: 767.98px) {
+        margin-top: 18px;
+      }
+    }
+
+    ul {
+      @include font-size(14px);
+      margin-top: 22px;
+      // opacity: 0.65;
+
+      @media (max-width: 767.98px) {
+        margin-bottom: 20px;
+        margin-top: 18px;
+      }
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          font-weight: 300;
+          &:focus,
+          &:hover {
+            transform: translateX(10px);
+          }
+        }
+      }
+    }
+  }
+
+  .extended_footer {
+    @extend %relative;
+    width: 100%;
+    @media (max-width: 767.98px) {
+      padding: 0 20px;
+    }
+  }
+
+  .social_footer {
+    ul {
+      > li {
+        display: inline-block;
+
+        a {
+          color: #fff;
+          @include font-size(18px);
+
+          &:focus,
+          &:hover {
+            color: var(--gray_c);
+          }
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    @include font-size(14px);
+    opacity: 0.65;
+  }
+
+  .other_links {
+    text-transform: uppercase;
+    // opacity: 0.65;
+
+    ul {
+      @include font-size(14px);
+    }
+
+    li {
+      display: inline-flex;
+      padding: 0 10px;
+
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        margin-bottom: 5px;
+      }
+
+      @media (max-width: 575.98px) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+*/
+/* Footer Container */
+.toyota-footer {
+  background-color: #252525;
+  color: #fff;
+  padding-top: 3%;
+  padding-bottom: 2%;
+  font-size: 0.8rem; /* Small default text size */
+}
+
+/* Typography & Headers */
+.footer-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.footer-sub-header {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Lists */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-list a {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-list a:hover {
+  color: #fff;
+}
+
+/* Specific Link Formatting */
+.address-text,
+.investor-text {
+  color: #a0a0a0;
+  line-height: 1.5;
+}
+
+.investor-link {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Placeholder image formatting */
+.img-placeholder {
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+/* Logos */
+.toyota-logo-placeholder {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.jamapunji-logo-placeholder {
+  width: 130px;
+  float: right; /* Default for large screens */
+
+  img {
+    width: 100%;
+  }
+}
+
+/* Social Icons */
+.social-icons a {
+  color: #a5a5a5;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+/* Dividers */
+.footer-divider {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Script Text */
+.move-your-world {
+  font-family: var(--script-font);
+  font-size: 3rem;
+  text-align: right;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+
+  img {
+    width: 100%;
+  }
+}
+
+.footer-bottom {
+  background-color: #101010;
+}
+
+/* Copyright & Privacy */
+.copyright-text {
+  color: #fff;
+  font-size: 0.7rem;
+  text-align: center;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.privacy-link {
+  color: #fff;
+  font-size: 0.7rem;
+  text-decoration: underline;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 767.98px) {
+  .toyota-footer {
+    padding-top: 3rem;
+  }
+  .toyota-logo-placeholder,
+  .social-icons,
+  .investor-info,
+  .company-address {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .toyota-logo-placeholder {
+    margin-bottom: 2rem;
+  }
+  .footer-header,
+  .footer-sub-header {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .footer-list {
+    text-align: center;
+  }
+  .footer-divider {
+    display: none; /* Hide top divider on mobile, keep lists compact */
+  }
+
+  .jamapunji-logo-placeholder {
+    float: none;
+    margin: 2rem auto 1rem auto; /* Center and give space */
+  }
+
+  .move-your-world {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-right: 0;
+  }
+  .mobile-order-first {
+    order: -1;
+  }
+}
+/* footer end */

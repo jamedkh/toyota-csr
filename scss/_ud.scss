@@ -1,0 +1,138 @@
+@use "mixable" as *;
+@use "global" as *;
+
+.ur {
+  direction: rtl;
+
+  :root {
+    --body_font: "Poppins", sans-serif;
+  }
+
+  %textRight {
+    text-align: right;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: normal;
+  }
+
+  .swiper {
+    direction: ltr;
+  }
+
+  a[href^="tel:"] {
+    display: inline-block;
+    direction: ltr;
+  }
+
+  .lg_menu nav > ul > li > a,
+  .lg_menu nav > ul > li .subnav_container .subnav_single_holder ul li a {
+    font-weight: 600;
+  }
+
+  .lg_menu nav > ul > li.has-mega-menu > a:after,
+  .lg_menu nav > ul > li.has-sub > a::after {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+
+  .lg_menu nav > ul > li .subnav_container .subnav_single_holder ul li a:hover {
+    transform: translateX(-5px);
+  }
+
+  .lg_menu nav > ul > li .subnav_container .subnav_container_wrapper {
+    @extend %textRight;
+  }
+
+  .icon_box_single_footer a {
+    transform: scale(-1);
+  }
+
+  .icon_box_single_footer a:hover {
+    transform: scale(-1) translateX(5px);
+  }
+
+  .bod_single {
+    border-left: 0 none;
+    border-right: 2px solid var(--primary_color);
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  .hero_text_wrapper_content_title .page_name {
+    margin-top: 22px;
+  }
+
+  .bd_right {
+    border-left: 1px solid var(--bs-border-color);
+    border-right: 0 none;
+  }
+
+  .close-btn {
+    left: 10px;
+    right: auto;
+  }
+
+  .leadership_section .img-box .overlay-detail {
+    text-align: right;
+  }
+
+  .btn_bkt {
+    span {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+  }
+
+  .career_single ul li:nth-child(3) {
+    text-align: left;
+  }
+
+  .career_single_info ul.shedule li {
+    margin-left: 12px;
+    margin-right: 0;
+    padding-left: 12px;
+    padding-right: 0;
+
+    &:not(:last-child) {
+      border-left: 1px solid hsl(225deg 5.88% 13.33% / 20.84%);
+      border-right: 0 none;
+    }
+  }
+
+  .event_single_overlay span {
+    left: 20px;
+    right: auto;
+    scale: -1;
+  }
+
+  /* 
+  .contact_single ul li:last-child {
+    direction: ltr;
+  }
+     */
+
+  footer .col_divider [class^="col-"]:not(:first-child) {
+    padding-left: 0;
+    padding-right: 5rem;
+
+    @media (max-width: 767.98px) {
+      padding-right: 0;
+    }
+  }
+
+  footer .col_divider [class^="col-"]:not(:last-child) {
+    border-left: 1px solid #635c70;
+    border-right: 0 none;
+
+    @media (max-width: 767.98px) {
+      border-left: 0 none;
+    }
+  }
+}

@@ -1,0 +1,226 @@
+@use "sass:math";
+@use "sass:string";
+@use "sass:meta";
+
+/* variables */
+$selection_color: #6ac726;
+$primary_color: #e40076;
+$highlight_color: #ff007f;
+$secondary_color: #8ac34a;
+$body_text_color: #2f2f2f;
+$black_color: #000;
+$gray: #6d6e70;
+$gray_1: #111;
+$gray_35: #353535;
+$gray_4: #444;
+$gray_5: #555;
+$gray_71: #717171;
+$gray_9: #999;
+$gray_ac: #acacac;
+$gray_c: #ccc;
+$gray_fa: #fafafa;
+$gray_f0: #f0f0f0;
+$gray_d3: #d3d3d3;
+
+$z_gray: #515050;
+$gray_84: #848484;
+$gray_69: #696969;
+$z_heading: #404041;
+$z_content: #878787;
+$z_border: #ebebeb;
+
+$white: #fff;
+$space_10: 10px;
+$space_20: 20px;
+
+/*  mixins start */
+
+/* letter spacing  */
+@mixin ls($spacing) {
+  letter-spacing: $spacing;
+  margin-right: -$spacing;
+}
+
+/* Mixin to prefix a property
+@author Hugo Giraudel
+@param {String} $property - Property name
+@param {*} $value - Property value
+@param {List} $prefixes (()) - List of prefixes to print 
+usage: .selector { @include prefix(transform, rotate(45deg), 'webkit' 'ms'); }*/
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+/* usage: .foo { @include border-radius(10px)} */
+@mixin border-radius($radius) {
+  @include prefix(border-radius, $radius, "webkit" "ms");
+}
+
+@mixin box-shadow($shadow...) {
+  @include prefix(box-shadow, $shadow, "webkit");
+}
+
+/* / @example scss - Usage
+/   .foo {
+/     @include transition(all 0.3s ease-in 1s);
+/   }
+/ @example css - Result
+/   .foo {
+/     -webkit-transition: all 0.3s ease-in 1s;
+/     transition: all 0.3s ease-in 1s;
+/   } */
+@mixin transition($args...) {
+  @include prefix(transition, $args, "webkit");
+}
+
+@mixin backdrop-filter($argument...) {
+  @include prefix(backdrop-filter, $argument, "webkit");
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($args...) {
+  @include prefix(animation, $args, "webkit");
+}
+
+/* / @example scss - Usage
+/   .foo {
+/     @include transform(scale(1.2));
+/   }
+/ @example css - Result
+/   .foo {
+/  		-webkit-tranform: scale(1.2);
+/     	tranform: scale(1.2);
+/   } */
+@mixin transform($val) {
+  @include prefix(transform, $val, "webkit");
+}
+
+/* / Given the location of a webfont, will generate a font-face declaration with multiple file formats.
+/ @access public
+/ @param {String} $font-name - Font family name
+/ @param {String} $file-name - File name (no extension)
+/ @param {String | Number} $weight [normal] - Font weight
+/ @param {String} $style [normal] - Font style
+/ @example scss - Usage
+/   @include font-face('gotham', '/fonts/gotham', normal, 400); */
+@mixin font-face(
+  $font-name,
+  $file-name,
+  $style: normal,
+  $weight: normal,
+  $display: swap
+) {
+  @font-face {
+    font-family: $font-name; // No need for string.quote()
+    src: url($file-name + ".woff2") format("woff2"),
+      // WOFF2 first for modern browsers
+      url($file-name + ".woff") format("woff"),
+      // WOFF second
+      url($file-name + ".ttf") format("truetype"),
+      // TTF next
+      url($file-name + ".svg#" + $font-name) format("svg"),
+      // SVG with proper ID if needed
+      url($file-name + ".eot"); // EOT for IE (should be last)
+    src: url($file-name + ".eot?#iefix") format("embedded-opentype"); // IE fix for EOT
+    font-style: $style;
+    font-weight: $weight;
+    font-display: $display;
+  }
+}
+
+/*
+// font size mixin convert px to rem
+// usage: .foo { @include font-size(14px)} */
+$base_font_size: 16px;
+
+@mixin font-size($font_size) {
+  /* 
+	font-size: $font_size; //pixel fallback 
+	*/
+  font-size: math.div($font_size, $base_font_size) * 1rem;
+}
+
+@mixin width_clear {
+  clear: both;
+  display: block;
+  height: auto;
+  overflow: hidden;
+}
+
+@mixin list_clear {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin font_normal {
+  font-style: normal;
+  font-weight: normal;
+}
+
+// tranistion delay loop
+@for $i from 0 through 20 {
+  .sm_offcanvas_wrapper.active
+    .sm_offcanvas_extended
+    ul
+    li:nth-child(#{$i + 1}) {
+    transition-delay: 0.08s * $i;
+  }
+}
+
+// utility classes for spacing
+$utilSpace: (
+  "10": 10px,
+  "20": 20px,
+  "30": 30px,
+  "40": 40px,
+  "50": 50px,
+  "60": 60px,
+  "70": 70px,
+  "80": 80px,
+  "90": 90px,
+  "100": 100px,
+);
+
+// each loop for creating helping classes
+@each $key, $val in $utilSpace {
+  .mt_#{$key} {
+    margin-top: $val;
+  }
+
+  .mb_#{$key} {
+    margin-bottom: $val;
+  }
+
+  .mtb_#{$key} {
+    margin-top: $val;
+    margin-bottom: $val;
+  }
+
+  .pt_#{$key} {
+    padding-top: $val;
+  }
+
+  .pb_#{$key} {
+    padding-bottom: $val;
+  }
+
+  .ptb_#{$key} {
+    padding-top: $val;
+    padding-bottom: $val;
+  }
+}

@@ -1,0 +1,48 @@
+{
+	"name": "boilerplate_scss-gulp",
+	"version": "1.0.0",
+	"description": "Simple front-end boilerplate using Gulp 4",
+	"main": "gulpfile.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jamedkh/boilerplate-gulp.git"
+	},
+	"keywords": [
+		"gulp",
+		"boilerplate",
+		"html",
+		"css",
+		"javascript"
+	],
+	"author": "@jamedkh",
+	"license": "ISC",
+	"devDependencies": {
+		"autoprefixer": "^10.4.13",
+		"browser-sync": "^2.27.10",
+		"cssnano": "^5.1.14",
+		"gulp": "^4.0.2",
+		"gulp-concat": "^2.6.1",
+		"gulp-html-minifier": "^0.1.8",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-order": "^1.2.0",
+		"gulp-postcss": "^9.0.1",
+		"gulp-purgecss": "^5.0.0",
+		"gulp-replace": "^1.1.3",
+		"gulp-sass": "^5.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-terser": "^2.1.0",
+		"gulp-uglify": "^3.0.2",
+		"postcss": "^8.4.18",
+		"purgecss": "^5.0.0",
+		"sass": "^1.56.0"
+	},
+	"dependencies": {
+		"@fancyapps/ui": "^5.0.26",
+		"bootstrap": "^5.3.7",
+		"bootstrap-icons": "^1.13.1",
+		"gsap": "^3.13.0",
+		"lenis": "^1.3.4",
+		"remixicon": "^3.7.0",
+		"swiper": "^11.2.8"
+	}
+}

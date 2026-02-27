@@ -1,0 +1,7 @@
+/dist
+/node_modules
+/others
+/videos/slide.mp4
+/videos/vertical.mp4
+/__library
+.DS_Store
