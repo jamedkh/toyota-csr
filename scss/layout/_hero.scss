@@ -78,6 +78,18 @@
   }
 }
 
+.blind-wrapper {
+  overflow: hidden;
+  display: block; /* Or flex depending on your layout */
+}
+
+/* Ensure the text starts "hidden" below the wrapper */
+.main-title,
+.full-tagline {
+  margin-bottom: 0;
+  will-change: transform;
+}
+
 .home_hero_slider {
   font-size: 0;
   @extend %relative;

@@ -118,29 +118,40 @@
         >
           <div class="full-screen-container-content content-layer">
             <div class="col-12 col-lg-6 title-section-container mb-5 mb-lg-0">
-              <p class="main-title text-white">Sustainability</p>
-              <p class="main-title text-white text-center">Beyond</p>
-              <p class="main-title title-cars text-white text-end">Cars</p>
+              <div class="blind-wrapper">
+                <p class="main-title text-white">Sustainability</p>
+              </div>
+              <div class="blind-wrapper">
+                <p class="main-title text-white text-center">Beyond</p>
+              </div>
+              <div class="blind-wrapper">
+                <p class="main-title title-cars text-white text-end">Cars</p>
+              </div>
             </div>
 
             <div class="col-12 col-lg-6 tagline-section-container">
-              <p class="full-tagline text-white">Driving Progress.</p>
-              <p class="full-tagline text-white">Creating Value.</p>
-              <p class="full-tagline text-white">Sustaining Tomorrow.</p>
+              <div class="blind-wrapper">
+                <p class="full-tagline text-white">Driving Progress.</p>
+              </div>
+              <div class="blind-wrapper">
+                <p class="full-tagline text-white">Creating Value.</p>
+              </div>
+              <div class="blind-wrapper">
+                <p class="full-tagline text-white">Sustaining Tomorrow.</p>
+              </div>
             </div>
           </div>
-
           <div class="dark-overlay"></div>
         </section>
         <!-- hero end -->
 
-        <!-- network start -->
+        <!-- mb start -->
         <section class="mobility-section clearfix">
           <div class="container_content">
             <div class="row g-0 align-items-center justify-content-center">
-              <div class="col-xl-5 col-lg-6">
+              <div class="col-xl-8 col-lg-11">
                 <div class="section_intro text-center">
-                  <p class="fw_md fs-3">
+                  <p class="fw_md">
                     Mobility is not only about vehicles. It is about enabling
                     people, protecting the planet, and building the future
                     responsibly.
@@ -150,7 +161,7 @@
             </div>
           </div>
         </section>
-        <!-- network end -->
+        <!-- mb end -->
 
         <!-- solution start -->
         <section class="csr_blocks clearfix overflow-hidden">
@@ -758,6 +769,92 @@
 
     <script>
       gsap.registerPlugin(ScrollTrigger);
+
+      const heroTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".full-screen-container",
+          start: "top 80%", // Starts when the top of the section hits 80% of viewport
+          toggleActions: "play none none none", // Plays once when entering
+        },
+      });
+
+      // 1. Big Text Reveal (Staggered)
+      heroTL.from(".title-section-container .main-title", {
+        duration: 1.2,
+        y: 150, // Push down below the wrapper
+        skewY: 7, // Optional: Adds a stylish "tilt" as it slides up
+        ease: "power4.out",
+        stagger: 0.2, // Delay between each line
+      });
+
+      // 2. Taglines Reveal (with a 0.5s delay after the titles start)
+      heroTL.from(
+        ".tagline-section-container .full-tagline",
+        {
+          duration: 1,
+          y: 50,
+          opacity: 0, // Taglines usually look better fading in while sliding
+          ease: "power3.out",
+          stagger: 0.15,
+        },
+        "-=0.5",
+      ); // Start this 0.5s before the previous animation fully finishes
+
+      // text reveal
+
+      const textElement = document.querySelector(".section_intro p");
+      const words = textElement.innerText.split(" ");
+      textElement.innerHTML = "";
+
+      // Double-split logic to prevent the layout issues from your image
+      words.forEach((word) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.className = "word-wrapper";
+
+        word.split("").forEach((char) => {
+          const charSpan = document.createElement("span");
+          charSpan.className = "char";
+          charSpan.textContent = char;
+          wordSpan.appendChild(charSpan);
+        });
+
+        textElement.appendChild(wordSpan);
+        textElement.appendChild(document.createTextNode(" "));
+      });
+
+      const allChars = document.querySelectorAll(".char");
+
+      // The Animation Timeline
+      const lettersTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".mobility-section",
+          start: "top 70%",
+          end: "top 10%", // Stretching the end point makes the "scroll" feel longer
+          scrub: 1.2, // Smooth catch-up for a premium feel
+          once: true, // THIS IS THE KEY: it will not play backwards
+        },
+      });
+
+      // Phase 1: Fade to Red
+      lettersTL
+        .to(allChars, {
+          color: "#e10600",
+          stagger: 0.1, // Slower stagger makes red more visible
+          duration: 1, // Give the color change some "weight"
+          ease: "none",
+        })
+        // Phase 2: Fade to White
+        // We start this at "0.5" so that a visible chunk of text is red before turning white
+        .to(
+          allChars,
+          {
+            color: "#ffffff",
+            stagger: 0.1,
+            duration: 1,
+            ease: "none",
+          },
+          0.5,
+        ); // The delay here determines the length of the red "streak"
 
       // 1. First, build the structure for the rolling numbers
       const statNumbers = document.querySelectorAll(".stat-number");

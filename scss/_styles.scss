@@ -2289,7 +2289,7 @@ h4.wp-block-heading {
           font-weight: 300;
           margin: auto;
           margin-bottom: 1rem;
-          width: 50%;
+          width: 70%;
 
           @media screen and (min-width: 1921px) {
             width: 70%;
@@ -2552,6 +2552,22 @@ h4.wp-block-heading {
 
 .mobility-section {
   padding: 8% 0;
+
+  p {
+    font-size: calc(1.3rem + 1.3vw);
+    color: rgba(255, 255, 255, 0.2);
+    line-height: 1.4;
+  }
+
+  .word-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .char {
+    display: inline-block;
+    will-change: color;
+  }
 }
 
 /* career  */
