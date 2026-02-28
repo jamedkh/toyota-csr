@@ -828,7 +828,7 @@
       const lettersTL = gsap.timeline({
         scrollTrigger: {
           trigger: ".mobility-section",
-          start: "top 70%",
+          start: "top 50%",
           end: "top 10%", // Stretching the end point makes the "scroll" feel longer
           scrub: 1.2, // Smooth catch-up for a premium feel
           once: true, // THIS IS THE KEY: it will not play backwards
@@ -840,7 +840,7 @@
         .to(allChars, {
           color: "#e10600",
           stagger: 0.1, // Slower stagger makes red more visible
-          duration: 1, // Give the color change some "weight"
+          duration: 0.5, // Give the color change some "weight"
           ease: "none",
         })
         // Phase 2: Fade to White
@@ -850,7 +850,7 @@
           {
             color: "#ffffff",
             stagger: 0.1,
-            duration: 1,
+            duration: 0.8,
             ease: "none",
           },
           0.5,
