@@ -48,7 +48,7 @@
   font-weight: 700; /* Bold */
   line-height: 1.1;
   margin-bottom: 0.1em; /* Tight line spacing */
-  font-size: calc(2.2rem + 5vw); /* Highly responsive font size */
+  font-size: calc(2.2rem + 4.2vw); /* Highly responsive font size */
 }
 
 /* Custom alignment for 'Cars' word, to replicate image */
@@ -81,6 +81,7 @@
 .blind-wrapper {
   overflow: hidden;
   display: block; /* Or flex depending on your layout */
+  padding-bottom: 2px;
 }
 
 /* Ensure the text starts "hidden" below the wrapper */
