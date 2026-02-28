@@ -228,7 +228,8 @@ footer {
   color: #fff;
   padding-top: 3%;
   padding-bottom: 2%;
-  font-size: 0.8rem; /* Small default text size */
+  font-size: 0.8rem;
+  /* Small default text size */
 }
 
 /* Typography & Headers */
@@ -300,7 +301,8 @@ footer {
 
 .jamapunji-logo-placeholder {
   width: 130px;
-  float: right; /* Default for large screens */
+  float: right;
+  /* Default for large screens */
 
   img {
     width: 100%;
@@ -364,6 +366,7 @@ footer {
   .toyota-footer {
     padding-top: 3rem;
   }
+
   .toyota-logo-placeholder,
   .social-icons,
   .investor-info,
@@ -372,24 +375,30 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
+
   .toyota-logo-placeholder {
     margin-bottom: 2rem;
   }
+
   .footer-header,
   .footer-sub-header {
     text-align: center;
     margin-top: 2rem;
   }
+
   .footer-list {
     text-align: center;
   }
+
   .footer-divider {
-    display: none; /* Hide top divider on mobile, keep lists compact */
+    display: none;
+    /* Hide top divider on mobile, keep lists compact */
   }
 
   .jamapunji-logo-placeholder {
     float: none;
-    margin: 2rem auto 1rem auto; /* Center and give space */
+    margin: 2rem auto 1rem auto;
+    /* Center and give space */
   }
 
   .move-your-world {
@@ -397,8 +406,10 @@ footer {
     font-size: 2.5rem;
     margin-right: 0;
   }
+
   .mobile-order-first {
     order: -1;
   }
 }
+
 /* footer end */

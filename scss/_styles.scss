@@ -275,6 +275,11 @@
     visibility: visible;
   }
 
+  &:focus,
+  &:hover {
+    background-color: #000;
+  }
+
   i {
     display: inline-block;
     @include font-size(32px);
@@ -289,6 +294,7 @@
     justify-content: center;
     line-height: 0.8;
   }
+
   /* 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -318,7 +324,7 @@
   justify-content: center;
   text-decoration: none;
 
-  > * {
+  >* {
     grid-column: 1;
     grid-row: 1;
   }
@@ -351,6 +357,7 @@
       img {
         opacity: 0.2;
       }
+
       span {
         opacity: 1;
       }
@@ -367,6 +374,7 @@
 }
 
 .solution_intro {
+
   h1,
   h2 {
     font-weight: 600;
@@ -432,6 +440,7 @@
       @media screen and (max-width: 1440px) {
         width: 60px;
       }
+
       @media screen and (max-width: 1366px) {
         width: 60px;
       }
@@ -449,6 +458,7 @@
           object-fit: contain;
           width: 58px;
         }
+
         @media screen and (max-width: 1366px) {
           object-fit: contain;
           width: 58px;
@@ -665,6 +675,7 @@
         &_title {
           color: #fff;
         }
+
         svg {
           fill: #fff;
         }
@@ -717,6 +728,7 @@
 
 .values_section {
   @include smSpace;
+
   .section_intro {
     @media (max-width: 767.98px) {
       margin-bottom: 0;
@@ -740,6 +752,7 @@
 
 .news_section {
   @include smSpace;
+
   .section_intro {
     @media (max-width: 767.98px) {
       margin-bottom: 0;
@@ -821,6 +834,7 @@
   @media (min-width: 992px) and (max-width: 1199.98px) {
     flex-direction: column;
   }
+
   @media (min-width: 768px) and (max-width: 991.98px) {
     flex-direction: column;
   }
@@ -839,6 +853,7 @@
       padding: 20px 20px 60px;
       width: 100%;
     }
+
     @media (min-width: 768px) and (max-width: 991.98px) {
       padding: 20px 20px 60px;
       width: 100%;
@@ -869,6 +884,7 @@
       top: -3rem;
       width: 100%;
     }
+
     @media (min-width: 768px) and (max-width: 991.98px) {
       flex-direction: column;
       left: auto;
@@ -900,6 +916,7 @@
 
     &_content {
       width: 60%;
+
       @media (min-width: 992px) and (max-width: 1199.98px) {
         text-align: center;
       }
@@ -1008,7 +1025,7 @@
     margin-bottom: 20px;
   }
 
-  > a {
+  >a {
     @extend %absolute;
     inset: 0;
     height: 100%;
@@ -1090,9 +1107,11 @@
         @media screen and (max-width: 1440px) {
           @include font-size(16px);
         }
+
         @media screen and (max-width: 1366px) {
           @include font-size(16px);
         }
+
         @media screen and (max-width: 1280px) {
           @include font-size(16px);
         }
@@ -1102,9 +1121,11 @@
         @media screen and (max-width: 1440px) {
           @include font-size(14px);
         }
+
         @media screen and (max-width: 1366px) {
           @include font-size(14px);
         }
+
         @media screen and (max-width: 1280px) {
           @include font-size(14px);
         }
@@ -1128,6 +1149,7 @@
   }
 
   @media (hover: hover) and (pointer: fine) {
+
     &:focus &_media img,
     &:hover &_media img {
       scale: 1.2;
@@ -1247,6 +1269,7 @@
     @media (max-width: 767.98px) {
       padding: 20px 0;
     }
+
     .section_image {
       @media (max-width: 767.98px) {
         padding: 0 20px;
@@ -1279,6 +1302,7 @@
     @media (max-width: 767.98px) {
       padding: 20px 0;
     }
+
     .section_image {
       @media (max-width: 767.98px) {
         padding: 0 20px;
@@ -1288,6 +1312,7 @@
 
   .section_content {
     margin-right: 7vw;
+
     // margin-right: 4rem;
     @media (max-width: 767.98px) {
       margin-right: 0;
@@ -1484,16 +1509,14 @@
 
   &::-webkit-scrollbar-thumb {
     background-color: #f58120;
-    background-image: -webkit-linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.2) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.2) 75%,
-      transparent 75%,
-      transparent
-    );
+    background-image: -webkit-linear-gradient(45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent);
   }
 
   ol,
@@ -1514,6 +1537,7 @@
   @media (max-width: 767.98px) {
     padding-bottom: 0;
   }
+
   .container_content {
     padding-bottom: 160px;
 
@@ -1608,8 +1632,7 @@
       }
     }
 
-    @media (hover: hover) and (pointer: fine) {
-    }
+    @media (hover: hover) and (pointer: fine) {}
 
     &:hover {
       .overlay-detail {
@@ -1905,6 +1928,7 @@
     }
   }
 }
+
 /* /solution */
 
 /* life */
@@ -1988,9 +2012,11 @@
     @media screen and (max-width: 1440px) {
       font-size: 3.8vw;
     }
+
     @media screen and (max-width: 1366px) {
       font-size: 3.8vw;
     }
+
     @media screen and (max-width: 1280px) {
       font-size: 3.8vw;
     }
@@ -2000,6 +2026,7 @@
     }
   }
 }
+
 /* /shareholder */
 
 /* press-releases */
@@ -2066,6 +2093,7 @@
   img[class*="attachment-"] {
     height: auto;
   }
+
   .feature-postimg img,
   img.size-full,
   img.size-large,
@@ -2244,7 +2272,8 @@ h4.wp-block-heading {
 
 .csr_blocks {
   &_invest {
-    background-color: #d11e2f; /* Matching the specific red from the image */
+    background-color: var(--secondary_color);
+    /* Matching the specific red from the image */
     color: white;
     font-size: calc(1.3rem + 0.8vw);
     font-weight: bold;
@@ -2259,18 +2288,19 @@ h4.wp-block-heading {
     position: relative;
     text-align: center;
 
-    @media screen and (min-width: 1920px) {
-    }
-    @media screen and (min-width: 1600px) {
-    }
+    @media screen and (min-width: 1920px) {}
+
+    @media screen and (min-width: 1600px) {}
+
     @media screen and (max-width: 1440px) {
       width: 50%;
     }
+
     @media screen and (max-width: 1366px) {
       width: 48%;
     }
-    @media screen and (max-width: 1280px) {
-    }
+
+    @media screen and (max-width: 1280px) {}
   }
 
   .event_single {
@@ -2295,16 +2325,17 @@ h4.wp-block-heading {
             width: 70%;
           }
 
-          @media screen and (min-width: 1600px) {
-          }
+          @media screen and (min-width: 1600px) {}
+
           @media screen and (max-width: 1440px) {
             width: 80%;
           }
+
           @media screen and (max-width: 1366px) {
             width: 80%;
           }
-          @media screen and (max-width: 1280px) {
-          }
+
+          @media screen and (max-width: 1280px) {}
         }
       }
 
@@ -2326,6 +2357,7 @@ h4.wp-block-heading {
     }
   }
 }
+
 /* events */
 
 .impact-section {
@@ -2338,9 +2370,11 @@ h4.wp-block-heading {
 
 .impact-description {
   line-height: 1.6;
-  color: #b0b0b0; /* Light gray for placeholder text */
+  color: #b0b0b0;
+  /* Light gray for placeholder text */
   max-width: 70%;
 }
+
 /* Updated Container and Item Styles for Animated Dividers */
 .stat-list-container {
   position: relative;
@@ -2355,7 +2389,8 @@ h4.wp-block-heading {
   left: 0;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.9);
-  width: var(--divider-width, 0%); /* Starts at 0%, controlled by GSAP */
+  width: var(--divider-width, 0%);
+  /* Starts at 0%, controlled by GSAP */
 }
 
 .stat-item {
@@ -2373,28 +2408,34 @@ h4.wp-block-heading {
   left: 0;
   height: 1px;
   background-color: rgba(255, 255, 255, 0.9);
-  width: var(--divider-width, 0%); /* Starts at 0%, controlled by GSAP */
+  width: var(--divider-width, 0%);
+  /* Starts at 0%, controlled by GSAP */
 }
+
 /* ODOMETER EFFECT CSS */
 .stat-number {
   font-size: 4.5rem;
   font-weight: 500;
   line-height: 1;
-  display: inline-flex; /* Keep elements in a row */
+  display: inline-flex;
+  /* Keep elements in a row */
   align-items: flex-start;
 }
 
 .digit-wrapper {
   display: inline-block;
-  height: 1em; /* Restrict height to exactly one number */
-  overflow: hidden; /* Hide the rest of the column */
+  height: 1em;
+  /* Restrict height to exactly one number */
+  overflow: hidden;
+  /* Hide the rest of the column */
   vertical-align: top;
 }
 
 .digit-col {
   display: flex;
   flex-direction: column;
-  will-change: transform; /* Performance optimization for GSAP */
+  will-change: transform;
+  /* Performance optimization for GSAP */
 }
 
 .digit,
@@ -2402,7 +2443,8 @@ h4.wp-block-heading {
 .prefix,
 .suffix {
   display: inline-flex;
-  height: 1em; /* Force every element to match the wrapper's height */
+  height: 1em;
+  /* Force every element to match the wrapper's height */
   align-items: center;
   justify-content: center;
   line-height: 1;
@@ -2426,12 +2468,15 @@ h4.wp-block-heading {
   .impact-title {
     font-size: 2.5rem;
   }
+
   .stat-item {
     padding: 1.5rem 0;
   }
+
   .stat-number {
     font-size: 2.5rem;
   }
+
   .stat-label {
     margin-left: 0;
     margin-top: 0.5rem;
@@ -2522,10 +2567,10 @@ h4.wp-block-heading {
 
 @media (min-width: 768px) {
   .intro-section .intro-text-col {
-    padding-left: 3rem; /* Inner gap between image and text */
-    padding-right: calc(
-      50vw - 360px
-    ); /* Aligns right edge to standard container */
+    padding-left: 3rem;
+    /* Inner gap between image and text */
+    padding-right: calc(50vw - 360px);
+    /* Aligns right edge to standard container */
   }
 }
 
@@ -2781,10 +2826,12 @@ h4.wp-block-heading {
       border-radius: 10px;
       display: inline-block;
       overflow: hidden;
+
       a {
         display: block;
         overflow: hidden;
         padding: 16px 45px;
+
         i {
           font-size: 22px;
         }
@@ -3035,20 +3082,16 @@ h4.wp-block-heading {
 }
 
 .left_overlay {
-  background: linear-gradient(
-    to left,
-    rgba(110, 65, 226, 0) 0%,
-    var(--secondary_color) 100%
-  );
+  background: linear-gradient(to left,
+      rgba(110, 65, 226, 0) 0%,
+      var(--secondary_color) 100%);
   left: 0;
 }
 
 .right_overlay {
-  background: linear-gradient(
-    to right,
-    rgba(110, 65, 226, 0) 0%,
-    var(--secondary_color) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(110, 65, 226, 0) 0%,
+      var(--secondary_color) 100%);
   right: 0;
 }
 
@@ -3244,6 +3287,7 @@ h4.wp-block-heading {
     display: flex;
   }
 }
+
 .marquee_holder {
   ul {
     animation: marquee 25s linear infinite;
@@ -3270,13 +3314,11 @@ h4.wp-block-heading {
 }
 
 .corners_fade {
-  background-image: linear-gradient(
-    to right,
-    #fff 0,
-    rgba(255, 255, 255, 0) var(--left-offset),
-    rgba(255, 255, 255, 0) calc(100% - var(--right-offset)),
-    #fff 100%
-  );
+  background-image: linear-gradient(to right,
+      #fff 0,
+      rgba(255, 255, 255, 0) var(--left-offset),
+      rgba(255, 255, 255, 0) calc(100% - var(--right-offset)),
+      #fff 100%);
   height: 100%;
   left: 0;
   pointer-events: none;
@@ -3289,6 +3331,7 @@ h4.wp-block-heading {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -3497,6 +3540,7 @@ aside {
 
     li {
       display: inline-block;
+
       a {
         border: 1px solid #ddd;
         color: #585859;
@@ -3506,6 +3550,7 @@ aside {
         text-decoration: none;
 
         @media (hover: hover) and (pointer: fine) {
+
           &:focus,
           &:hover {
             background-color: var(--primary_color);
@@ -3561,6 +3606,7 @@ aside {
 
     a {
       @media (hover: hover) and (pointer: fine) {
+
         &:focus,
         &:hover {
           color: var(--brand_color_500);
@@ -3574,6 +3620,7 @@ aside {
       align-self: flex-end;
 
       @media (hover: hover) and (pointer: fine) {
+
         &:focus,
         &:hover {
           background-color: var(--primary_color);
@@ -3621,6 +3668,7 @@ aside {
 }
 
 .wpcf7-form-control-wrap {
+
   input[type="text"],
   input[type="email"],
   input[type="tel"],
@@ -3652,6 +3700,7 @@ aside {
 .aligncenter {
   text-align: center;
 }
+
 .alignright {
   text-align: right;
 }
@@ -3771,6 +3820,7 @@ label.error {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       border-color: var(--primary_color);
+
       &::before {
         right: -50px;
         top: -60px;
@@ -3832,6 +3882,7 @@ label.error {
 }
 
 @media (max-width: 480px) {
+
   .e-nav__form,
   .e-nav__link {
     height: 38px;
@@ -3883,7 +3934,7 @@ label.error {
     margin: 0;
     padding: 0;
 
-    > li {
+    >li {
       flex: 0 1 33%;
       padding-right: 30px;
 
@@ -3909,7 +3960,8 @@ label.error {
 
   .sub-menu {
     margin-left: 20px;
-    > li {
+
+    >li {
       &:not(:last-child) {
         margin-bottom: 10px;
       }
